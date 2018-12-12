@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/.idea/workspace.xml" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="a6815900-20a7-4e89-a87d-cab5b490d2fc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cozmodel/user.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cozdata/dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/cozdata/dao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cozdata/hard_code.py" beforeDir="false" afterPath="$PROJECT_DIR$/cozdata/hard_code.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cozmodel/http.py" beforeDir="false" afterPath="$PROJECT_DIR$/cozmodel/http.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cozmodel/puzzle.py" beforeDir="false" afterPath="$PROJECT_DIR$/cozmodel/puzzle.py" afterDir="false" />
     </list>
     <ignored path="venv/" />
     <ignored path=".idea/" />
@@ -214,7 +211,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1544603025836</updated>
-      <workItem from="1544619896265" duration="1038000" />
+      <workItem from="1544619896265" duration="1195000" />
     </task>
     <task id="LOCAL-00001" summary="Initial submission">
       <created>1544611967497</created>
@@ -237,11 +234,18 @@
       <option name="project" value="LOCAL" />
       <updated>1544616602240</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Regular update">
+      <created>1544621553582</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1544621553582</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1038000" />
+    <option name="totallyTimeSpent" value="1195000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1124" extended-state="0" />
@@ -285,7 +289,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial submission" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial submission" />
+    <MESSAGE value="Regular update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Regular update" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/cozdata/dao_json.py" />
