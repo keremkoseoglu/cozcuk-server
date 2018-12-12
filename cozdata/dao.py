@@ -7,6 +7,10 @@ class DataAccessObject(ABC):
         pass
 
     @abstractmethod
+    def add_puzzle(self, new_puzzle: Puzzle):
+        pass
+
+    @abstractmethod
     def connect(self):
         pass
 
@@ -16,4 +20,8 @@ class DataAccessObject(ABC):
 
     @abstractmethod
     def get_puzzle(self, user: str) -> Puzzle:
+        pass
+
+    @abstractmethod
+    def login(self, user: str, password: str) -> bool:
         pass

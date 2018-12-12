@@ -1,19 +1,26 @@
-from flask import Flask, jsonify
-from cozdata import factory as dao_factory
+from flask import Flask, jsonify, request
+from cozmodel import http as cozhttp
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def hello_world():
-    return 'Hello World!'
+    return 'Çözcük'
 
-@app.route("/json/get_puzzle")
+
+@app.route("/json/get_puzzle", methods=['POST'])
 def json_get_puzzle():
-    ldao = dao_factory.get_dao()
-    ldao.connect()
-    puzzle = ldao.get_puzzle("") # todo 500 buraya user eklenecek
-    ldao.disconnect()
+    username = request.form.get("username")
+    password = request.form.get("password")
+    dao, logged_in = cozhttp.init_json_post(username, password)
+
+    if not logged_in:
+        return ""
+    puzzle = dao.get_puzzle(username)
+    dao.disconnect()
     return jsonify(puzzle.get_dict())
+
 
 if __name__ == '__main__':
     app.run()
