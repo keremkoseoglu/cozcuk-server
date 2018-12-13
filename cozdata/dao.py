@@ -37,7 +37,11 @@ class DataAccessObject(ABC):
         pass
 
     @abstractmethod
-    def get_puzzle(self, user: str) -> Puzzle:
+    def get_puzzle(self, question: str) -> Puzzle:
+        pass
+
+    @abstractmethod
+    def get_random_puzzle(self, user: str) -> Puzzle:
         pass
 
     @abstractmethod
@@ -58,6 +62,10 @@ class DataAccessObject(ABC):
 
     @abstractmethod
     def del_user(self, username: str):
+        pass
+
+    @abstractmethod
+    def get_user(self, username: str) -> User:
         pass
 
     @abstractmethod

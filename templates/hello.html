@@ -1,0 +1,22 @@
+{% include "header.html" %}
+
+Hoşgeldiniz!
+
+<form action="{{ url_for("html_login") }}" method="post">
+
+<table>
+    <tr>
+        <td>Kullanıcı: </td>
+        <td><input type="text" name="username"></td>
+    </tr>
+    <tr>
+        <td>Şifre: </td>
+        <td><input type="password" name="password"></td>
+    </tr>
+</table>
+
+<input type="submit" value="Giriş">
+
+</form>
+
+{% include "footer.html" %}

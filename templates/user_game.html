@@ -1,0 +1,80 @@
+{% include "header.html" %}
+
+<table>
+    <tr>
+        <td><span id="question"></span></td>
+        <td>=</td>
+        <td><input type="text" id="user_answer" class="answer"></td>
+        <td><span id="result"></span></td>
+    </tr>
+</table>
+
+<a href="#" onclick="check_answer()">Gönder</a> |
+<a href="#" onclick="show_hint()">İpucu</a> |
+<a href="#" onclick="get_new_question()">Yeni Soru</a>
+
+<script>
+    var question = ""
+    var hint = ""
+
+    function check_answer() {
+        var user_answer = $("#user_answer").val()
+
+        $.ajax({
+            type: "POST",
+            contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+            url: "{{ url_for("json_check_answer") }}",
+            data: {
+              "question": question,
+              "answer": user_answer
+            },
+            success: function (response) {
+                if (response["success"] == "True") {
+                    $("#result").text("✅")
+                }
+                else {
+                    $("#result").text("🔴")
+                }
+            }
+        });
+
+    }
+
+    function get_new_question() {
+        question = ""
+        hint = ""
+        paint_form()
+
+        $.ajax({
+            type: "GET",
+            contentType: "application/json",
+            url: "{{ url_for("json_get_puzzle") }}",
+            success: function (response) {
+                question = response["question"]
+                hint = response["hint"]
+                paint_form()
+            }
+        });
+    }
+
+    function paint_form() {
+        $("#question").text(question)
+        $("#user_answer").val("")
+        $("#result").text("❓")
+
+        $("#user_answer").focus()
+    }
+
+    function show_hint() {
+        $("#question").text(hint)
+    }
+
+    $( document ).ready(function() {
+        get_new_question()
+    });
+
+</script>
+
+
+{% include "footer.html" %}
+

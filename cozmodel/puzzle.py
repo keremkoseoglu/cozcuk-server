@@ -2,23 +2,24 @@
 
 class Puzzle:
 
-    _DIFF_EASY = 1
-    _DIFF_MEDIUM = 2
-    _DIFF_HARD = 3
-
-    def __init__(self, question: str, hint: str, answer: str, difficulty: int, approved: bool):
+    def __init__(self, question: str, hint: str, answer: str, approved: bool, author: str):
         self.question = question
         self.answer = answer
         self.hint = hint
-        self.difficulty = difficulty
         self.approved = approved
+        self.author = author
 
-    def get_dict(self) -> {}:
-        return {
+    def get_dict(self, include_answer=True) -> {}:
+        ret = {
             "question": self.question,
-            "answer": self.answer,
             "hint": self.hint,
-            "difficulty": self.difficulty,
-            "approved": self.approved
+            "approved": self.approved,
+            "author": self.author
         }
+
+        if include_answer:
+            ret["answer"] = self.answer
+            pass
+
+        return ret
 
