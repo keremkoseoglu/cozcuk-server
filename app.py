@@ -49,6 +49,11 @@ def html_add_user():
         return render_template("hacker.html")
 
 
+@app.route('/help', methods=['GET'])
+def html_help():
+    return render_template("help.html")
+
+
 @app.route('/game', methods=['GET'])
 def html_game():
     try:
