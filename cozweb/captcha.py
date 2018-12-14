@@ -28,15 +28,6 @@ def generate_captcha(session, static_folder: str):
 
 
 def initialize_captcha(session):
-
-    try:
-        answer = session["captcha_answer"]
-        if answer is not None and answer != "":
-            path = _get_png_file_path(answer)
-            os.remove(path)
-    except:
-        pass
-
     session["captcha_answer"] = ""
 
 
