@@ -53,13 +53,15 @@ Puzzle
 '''
 
 
-def init_json_puzzle_cud(request, session) -> tuple:
+def init_json_puzzle_cud(request, session, must_be_admin: True) -> tuple:
     ldao, username = init_auth_post(request, session)
-    ldao.get_user(username).ensure_admin()
+    if must_be_admin:
+        ldao.get_user(username).ensure_admin()
+
     new_puzzle = Puzzle(
-        request.form.get["question"],
-        request.form.get["hint"],
-        request.form.get["answer"],
+        request.form.get("question"),
+        request.form.get("hint"),
+        request.form.get("answer"),
         False,
         username
     )
@@ -75,9 +77,9 @@ def init_json_user_cud(request, session) -> tuple:
     ldao, username = init_auth_post(request, session)
     ldao.get_user(username).ensure_admin()
     new_user = User(
-        request.form.get["_username"],
-        request.form.get["_password"],
-        request.form.get["email"],
-        request.form.get["role"]
+        request.form.get("_username"),
+        request.form.get("_password"),
+        request.form.get("email"),
+        request.form.get("role")
     )
     return ldao, new_user

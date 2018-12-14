@@ -1,0 +1,57 @@
+{% include "header.html" %}
+
+<table>
+    <tr>
+        <td>Soru</td>
+        <td><input type="text" id="question"></td>
+    </tr>
+    <tr>
+        <td>İpucu</td>
+        <td><input type="text" id="hint"></td>
+    </tr>
+    <tr>
+        <td>Cevap</td>
+        <td><input type="text" id="answer"></td>
+    </tr>
+</table>
+
+<a href="#" onclick="send_answer()">Gönder</a> <span id="result"></span>
+
+
+<script>
+
+    function send_answer() {
+        var question = $("#question").val()
+        var hint = $("#hint").val()
+        var answer = $("#answer").val()
+
+        $.ajax({
+            type: "POST",
+            contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+            url: "{{ url_for("json_add_puzzle") }}",
+            data: {
+                "question": question,
+                "hint": hint,
+                "answer": answer
+            },
+            success: function (response) {
+                if (response["success"] == "True") {
+                    $("#result").text("✅")
+                    setTimeout(reset_result, 1000)
+                }
+                else {
+                    $("#result").text("🔴")
+                }
+            }
+        });
+    }
+
+    function reset_result() {
+        $("#result").text("")
+    }
+
+</script>
+
+{% include "user_menu.html" %}
+{% include "footer.html" %}
+

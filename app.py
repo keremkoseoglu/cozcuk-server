@@ -33,6 +33,16 @@ def html_administrator_home():
     return render_template("hacker.html")
 
 
+@app.route('/add_puzzle', methods=['GET'])
+def add_puzzle():
+    try:
+        dao, username = cozhttp.init_auth_post(request, session)
+        dao.disconnect()
+        return render_template("add_puzzle.html")
+    except Exception:
+        return render_template("hacker.html")
+
+
 @app.route('/game', methods=['GET'])
 def html_game():
     try:
@@ -92,10 +102,14 @@ Puzzle
 @app.route("/json/add_puzzle", methods=['POST'])
 def json_add_puzzle():
     try:
-        dao, cud_puzzle = cozhttp.init_json_puzzle_cud(request, session)
+        dao, cud_puzzle = cozhttp.init_json_puzzle_cud(
+            request,
+            session,
+            must_be_admin=False
+        )
         dao.add_puzzle(cud_puzzle)
         dao.disconnect()
-        return cozhttp.get_success_as_json("Question added")
+        return cozhttp.get_success_as_json("True")
     except Exception as error:
         return cozhttp.get_error_as_json(error)
 
@@ -121,7 +135,7 @@ def json_del_puzzle():
         dao, cud_puzzle = cozhttp.init_json_puzzle_cud(request, session)
         dao.del_puzzle(cud_puzzle.question)
         dao.disconnect()
-        return cozhttp.get_success_as_json("Question deleted")
+        return cozhttp.get_success_as_json("True")
     except Exception as error:
         return cozhttp.get_error_as_json(error)
 
@@ -143,7 +157,7 @@ def json_update_puzzle():
         dao, cud_puzzle = cozhttp.init_json_puzzle_cud(request, session)
         dao.update_puzzle(cud_puzzle)
         dao.disconnect()
-        return cozhttp.get_success_as_json("Question modified")
+        return cozhttp.get_success_as_json("True")
     except Exception as error:
         return cozhttp.get_error_as_json(error)
 
@@ -159,7 +173,7 @@ def json_add_user():
         dao, cud_user = cozhttp.init_json_user_cud(request, session)
         dao.add_user(cud_user)
         dao.disconnect()
-        return cozhttp.get_success_as_json("User added")
+        return cozhttp.get_success_as_json("True")
     except Exception as error:
         return cozhttp.get_error_as_json(error, dao)
 
@@ -170,7 +184,7 @@ def json_del_user():
         dao, cud_user = cozhttp.init_json_user_cud(request, session)
         dao.del_user(cud_user.username)
         dao.disconnect()
-        return cozhttp.get_success_as_json("User deleted")
+        return cozhttp.get_success_as_json("True")
     except Exception as error:
         return cozhttp.get_error_as_json(error, dao)
 
@@ -204,7 +218,7 @@ def json_update_user():
         dao, cud_user = cozhttp.init_json_user_cud(request, session)
         dao.update_user(cud_user)
         dao.disconnect()
-        return cozhttp.get_success_as_json("User modified")
+        return cozhttp.get_success_as_json("True")
     except Exception as error:
         return cozhttp.get_error_as_json(error, dao)
 
