@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, redirect, render_template, request, session, url_for
 from cozweb import http as cozhttp
 from cozmodel.user import User
+from cozdata import factory as dao_factory
 
 app = Flask(__name__)
 app.secret_key = "SARI_KEDI_BEYAZ_KEDI"
@@ -172,6 +173,18 @@ def json_get_user():
         user = dao.get_user(username)
         dao.disconnect()
         return jsonify(user.get_dict())
+    except Exception as error:
+        return cozhttp.get_error_as_json(error, dao)
+
+
+@app.route("/json/oauth", methods=['GET'])
+def json_oauth():
+    try:
+        oauth_username = request.args.get("oauth_username")
+        if oauth_username is None or oauth_username == "":
+            raise Exception("Invalid username")
+        session["username"] = oauth_username
+        return cozhttp.get_success_as_json("User added")
     except Exception as error:
         return cozhttp.get_error_as_json(error, dao)
 

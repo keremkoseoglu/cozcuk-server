@@ -33,8 +33,7 @@ Hoşgeldiniz!
       testAPI();
     } else {
       // The person is not logged into your app or we are unable to tell.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into this app.';
+      document.getElementById('status').innerHTML = '';
     }
   }
 
@@ -89,16 +88,24 @@ Hoşgeldiniz!
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
-      document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
+
+        $.ajax({
+            type: "GET",
+            url: "{{ url_for("json_oauth") }}?oauth_username=" + response.id,
+            success: function (json_response) {
+                if (json_response["success"] == "True") {
+                    window.location.replace("{{ url_for("html_game") }}");
+                }
+                else {
+                    alert("Giriş yapılamadı")
+                }
+            }
+        });
     });
   }
 </script>
 
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 </fb:login-button>
-
-<div id="status">
-</div>
 
 {% include "footer.html" %}
