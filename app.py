@@ -184,9 +184,9 @@ def json_oauth():
         if oauth_username is None or oauth_username == "":
             raise Exception("Invalid username")
         session["username"] = oauth_username
-        return cozhttp.get_success_as_json("User added")
+        return cozhttp.get_success_as_json("True")
     except Exception as error:
-        return cozhttp.get_error_as_json(error, dao)
+        return cozhttp.get_error_as_json(error, None)
 
 
 @app.route("/json/update_user", methods=['POST'])
