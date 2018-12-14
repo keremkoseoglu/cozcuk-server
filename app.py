@@ -1,11 +1,14 @@
 from flask import Flask, jsonify, redirect, render_template, request, session, url_for
-from cozweb import http as cozhttp
+from cozweb import http as cozhttp, captcha as cozcaptcha
 from cozmodel.user import User
-from cozdata import factory as dao_factory
+import os
 
 app = Flask(__name__)
 app.secret_key = "SARI_KEDI_BEYAZ_KEDI"
 app.config["CACHE_TYPE"] = "null"
+
+_APP_ROOT = os.path.dirname(os.path.abspath(__file__))
+_STATIC_FOLDER = os.path.join(_APP_ROOT, 'static')
 
 ############################################################
 # H T M L
@@ -14,7 +17,10 @@ app.config["CACHE_TYPE"] = "null"
 
 @app.route('/')
 def html_hello_world():
-    return render_template("hello.html")
+    if cozcaptcha.is_captcha_needed(session):
+        return render_template("hello_captcha.html")
+    else:
+        return render_template("hello.html")
 
 
 @app.route('/admin')
@@ -42,12 +48,15 @@ def html_login():
     try:
         dao, username = cozhttp.init_auth_post(request, session)
         session["username"] = username
+        cozcaptcha.initialize_captcha(session)
         if dao.get_user(username).role == User.ROLE_ADMIN:
             return redirect(url_for("html_admin"))
         else:
             return redirect(url_for("html_game"))
     except Exception:
-        return render_template("hacker.html")
+        if request.form.get("username") is not None or request.form.get("username") != "":
+            cozcaptcha.generate_captcha(session, _STATIC_FOLDER)
+        return redirect(url_for("html_hello_world"))
 
 
 @app.route('/logout', methods=['GET'])

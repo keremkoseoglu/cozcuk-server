@@ -11,6 +11,10 @@
         <td>Şifre: </td>
         <td><input type="password" name="password"></td>
     </tr>
+    <tr>
+        <td><img src="static/captcha/{{ session["captcha_answer"] }}.png"></td>
+        <td><input type="text" name="captcha"></td>
+    </tr>
 </table>
 
 <input type="submit" value="Giriş">

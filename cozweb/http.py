@@ -2,7 +2,7 @@ from cozdata import factory as dao_factory
 from flask import jsonify
 from cozmodel.puzzle import Puzzle
 from cozmodel.user import User
-
+from cozweb import captcha as cozcaptcha
 
 '''
 General
@@ -37,6 +37,10 @@ def init_auth_post(request, session) -> tuple:
         password = request.form.get("password")
         ldao.connect()
         logged_in = ldao.login(username, password)
+
+        if logged_in and cozcaptcha.is_captcha_needed(session):
+            expected_captcha = session["captcha_answer"]
+            logged_in = expected_captcha == request.form.get("captcha")
 
     if not logged_in:
         ldao.disconnect()
