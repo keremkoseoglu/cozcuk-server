@@ -49,6 +49,12 @@ def html_login():
         return render_template("hacker.html")
 
 
+@app.route('/logout', methods=['GET'])
+def html_logout():
+    session["username"] = ""
+    return redirect(url_for("html_hello_world"))
+
+
 @app.route('/psm', methods=['GET'])
 def html_admin():
     try:

@@ -32,7 +32,7 @@ def init_auth_post(request, session) -> tuple:
     if username is None or username == "":
         if "username" in session:
             username = session["username"]
-            logged_in = True
+            logged_in = username != ""
     else:
         password = request.form.get("password")
         ldao.connect()
