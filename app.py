@@ -55,6 +55,11 @@ def html_logout():
     return redirect(url_for("html_hello_world"))
 
 
+@app.route('/privacy', methods=['GET'])
+def html_privacy():
+    return app.send_static_file("privacy.html")
+
+
 @app.route('/psm', methods=['GET'])
 def html_admin():
     try:
