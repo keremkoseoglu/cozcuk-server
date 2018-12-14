@@ -22,10 +22,10 @@ def get_success_as_json(success_text: str):
     return jsonify({"success": success_text})
 
 
-def init_auth_post(request, session) -> tuple:
+def init_auth_post(app, request, session) -> tuple:
 
     logged_in = False
-    ldao = dao_factory.get_dao()
+    ldao = dao_factory.get_dao(app.config["DATA_CLASS"])
 
     username = request.form.get("username")
 
@@ -53,8 +53,8 @@ Puzzle
 '''
 
 
-def init_json_puzzle_cud(request, session, must_be_admin: True) -> tuple:
-    ldao, username = init_auth_post(request, session)
+def init_json_puzzle_cud(app, request, session, must_be_admin: True) -> tuple:
+    ldao, username = init_auth_post(app, request, session)
     if must_be_admin:
         ldao.get_user(username).ensure_admin()
 
@@ -73,13 +73,16 @@ User
 '''
 
 
-def init_json_user_cud(request, session) -> tuple:
-    ldao, username = init_auth_post(request, session)
-    ldao.get_user(username).ensure_admin()
+def init_json_user_cud(app, request, session, check_auth=True) -> tuple:
+    if check_auth:
+        ldao, username = init_auth_post(app, request, session)
+        ldao.get_user(username).ensure_admin()
+    else:
+        ldao = dao_factory.get_dao(app.config["DATA_CLASS"])
     new_user = User(
         request.form.get("_username"),
         request.form.get("_password"),
         request.form.get("email"),
-        request.form.get("role")
+        User.ROLE_CONSUMER
     )
     return ldao, new_user

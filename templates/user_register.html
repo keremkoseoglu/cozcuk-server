@@ -1,0 +1,64 @@
+{% include "header.html" %}
+
+<table>
+    <tr>
+        <td>Kullanıcı adı:</td>
+        <td><input type="text" id="username"><span id="user_error"></span></td>
+    </tr>
+    <tr>
+        <td>Şifre</td>
+        <td><input type="password" id="password1"><span id="pwd1_error"></span></td>
+    </tr>
+    <tr>
+        <td>Şifre (tekrar)</td>
+        <td><input type="password" id="password2"><span id="pwd2_error"></span></td>
+    </tr>
+    <tr>
+        <td>E-Posta:</td>
+        <td><input type="text" id="email"></td>
+    </tr>
+</table>
+
+<a href="#" onclick="register_user()">Gönder</a> <span id="result"></span>
+
+<script>
+    function register_user() {
+        var username = $("#username").val();
+        var password1 = $("#password1").val();
+        var password2 = $("#password2").val();
+        var email = $("#email").val();
+
+        if (username == "") {
+            $("#user_error").text("🔴");
+            return;
+        }
+
+        if (password1 != password2) {
+            $("#pwd1_error").text("🔴");
+            $("#pwd2_error").text("🔴");
+            return;
+        }
+
+        $.ajax({
+            type: "POST",
+            contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+            url: "{{ url_for("json_add_user") }}",
+            data: {
+                "_username": username,
+                "_password": password1,
+                "email": email
+            },
+            success: function (response) {
+                if (response["success"] == "True") {
+                    alert("Kayıt başarılı, giriş yapabilirsiniz");
+                    window.location.replace("{{ url_for("html_hello_world") }}");
+                }
+                else {
+                    alert("Bir hata oluştu");
+                }
+            }
+        });
+    }
+</script>
+
+{% include "footer.html" %}

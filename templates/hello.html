@@ -13,9 +13,15 @@
     </tr>
 </table>
 
-<input type="submit" value="Giriş">
+<input type="submit" value="Giriş"><input type="button" value="Yeni kayıt" onclick="new_user()">
 
 </form>
+
+<script>
+    function new_user() {
+        window.location.replace("{{ url_for("html_add_user") }}");
+    }
+</script>
 
 {% include "oauth.html" %}
 {% include "footer.html" %}

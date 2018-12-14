@@ -4,11 +4,9 @@ from cozmodel.user import User
 import os
 
 app = Flask(__name__)
-app.secret_key = "SARI_KEDI_BEYAZ_KEDI"
-app.config["CACHE_TYPE"] = "null"
-
-_APP_ROOT = os.path.dirname(os.path.abspath(__file__))
-_STATIC_FOLDER = os.path.join(_APP_ROOT, 'static')
+app.config.from_json("config.json")
+app.config["APP_ROOT"] = os.path.dirname(os.path.abspath(__file__))
+app.config["STATIC_FOLDER"] = os.path.join(app.config["APP_ROOT"], 'static')
 
 ############################################################
 # H T M L
@@ -34,11 +32,19 @@ def html_administrator_home():
 
 
 @app.route('/add_puzzle', methods=['GET'])
-def add_puzzle():
+def html_add_puzzle():
     try:
-        dao, username = cozhttp.init_auth_post(request, session)
+        dao, username = cozhttp.init_auth_post(app, request, session)
         dao.disconnect()
         return render_template("add_puzzle.html")
+    except Exception:
+        return render_template("hacker.html")
+
+
+@app.route('/add_user', methods=['GET'])
+def html_add_user():
+    try:
+        return render_template("user_register.html")
     except Exception:
         return render_template("hacker.html")
 
@@ -46,7 +52,7 @@ def add_puzzle():
 @app.route('/game', methods=['GET'])
 def html_game():
     try:
-        dao, username = cozhttp.init_auth_post(request, session)
+        dao, username = cozhttp.init_auth_post(app, request, session)
         dao.disconnect()
         return render_template("user_game.html")
     except Exception:
@@ -56,7 +62,7 @@ def html_game():
 @app.route('/login', methods=['POST'])
 def html_login():
     try:
-        dao, username = cozhttp.init_auth_post(request, session)
+        dao, username = cozhttp.init_auth_post(app, request, session)
         session["username"] = username
         cozcaptcha.initialize_captcha(session)
         if dao.get_user(username).role == User.ROLE_ADMIN:
@@ -65,7 +71,7 @@ def html_login():
             return redirect(url_for("html_game"))
     except Exception:
         if request.form.get("username") is not None or request.form.get("username") != "":
-            cozcaptcha.generate_captcha(session, _STATIC_FOLDER)
+            cozcaptcha.generate_captcha(session, app.config["STATIC_FOLDER"])
         return redirect(url_for("html_hello_world"))
 
 
@@ -83,7 +89,7 @@ def html_privacy():
 @app.route('/psm', methods=['GET'])
 def html_admin():
     try:
-        dao, username = cozhttp.init_auth_post(request, session)
+        dao, username = cozhttp.init_auth_post(app, request, session)
         dao.disconnect()
         return render_template("admin_menu.html")
     except Exception:
@@ -103,6 +109,7 @@ Puzzle
 def json_add_puzzle():
     try:
         dao, cud_puzzle = cozhttp.init_json_puzzle_cud(
+            app,
             request,
             session,
             must_be_admin=False
@@ -117,7 +124,7 @@ def json_add_puzzle():
 @app.route("/json/check_answer", methods=['POST'])
 def json_check_answer():
     try:
-        dao, username = cozhttp.init_auth_post(request, session)
+        dao, username = cozhttp.init_auth_post(app, request, session)
 
         user_question = request.form.get("question")
         user_answer = request.form.get("answer").replace(" ", "").replace("i", "İ").upper()
@@ -132,7 +139,7 @@ def json_check_answer():
 @app.route("/json/del_puzzle", methods=['POST'])
 def json_del_puzzle():
     try:
-        dao, cud_puzzle = cozhttp.init_json_puzzle_cud(request, session)
+        dao, cud_puzzle = cozhttp.init_json_puzzle_cud(app, request, session)
         dao.del_puzzle(cud_puzzle.question)
         dao.disconnect()
         return cozhttp.get_success_as_json("True")
@@ -143,7 +150,7 @@ def json_del_puzzle():
 @app.route("/json/get_puzzle", methods=['GET', 'POST'])
 def json_get_puzzle():
     try:
-        dao, username = cozhttp.init_auth_post(request, session)
+        dao, username = cozhttp.init_auth_post(app, request, session)
         puzzle = dao.get_random_puzzle(username)
         dao.disconnect()
         return jsonify(puzzle.get_dict(include_answer=False))
@@ -154,7 +161,7 @@ def json_get_puzzle():
 @app.route("/json/update_puzzle", methods=['POST'])
 def json_update_puzzle():
     try:
-        dao, cud_puzzle = cozhttp.init_json_puzzle_cud(request, session)
+        dao, cud_puzzle = cozhttp.init_json_puzzle_cud(app, request, session)
         dao.update_puzzle(cud_puzzle)
         dao.disconnect()
         return cozhttp.get_success_as_json("True")
@@ -170,7 +177,12 @@ User
 @app.route("/json/add_user", methods=['POST'])
 def json_add_user():
     try:
-        dao, cud_user = cozhttp.init_json_user_cud(request, session)
+        dao, cud_user = cozhttp.init_json_user_cud(
+            app,
+            request,
+            session,
+            check_auth=False
+        )
         dao.add_user(cud_user)
         dao.disconnect()
         return cozhttp.get_success_as_json("True")
@@ -181,7 +193,7 @@ def json_add_user():
 @app.route("/json/del_user", methods=['POST'])
 def json_del_user():
     try:
-        dao, cud_user = cozhttp.init_json_user_cud(request, session)
+        dao, cud_user = cozhttp.init_json_user_cud(app, request, session)
         dao.del_user(cud_user.username)
         dao.disconnect()
         return cozhttp.get_success_as_json("True")
@@ -192,7 +204,7 @@ def json_del_user():
 @app.route("/json/get_user", methods=['POST'])
 def json_get_user():
     try:
-        dao, username = cozhttp.init_auth_post(request, session)
+        dao, username = cozhttp.init_auth_post(app, request, session)
         user = dao.get_user(username)
         dao.disconnect()
         return jsonify(user.get_dict())
@@ -215,7 +227,7 @@ def json_oauth():
 @app.route("/json/update_user", methods=['POST'])
 def json_update_user():
     try:
-        dao, cud_user = cozhttp.init_json_user_cud(request, session)
+        dao, cud_user = cozhttp.init_json_user_cud(app, request, session)
         dao.update_user(cud_user)
         dao.disconnect()
         return cozhttp.get_success_as_json("True")
