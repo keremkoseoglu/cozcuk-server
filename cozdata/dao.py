@@ -73,6 +73,6 @@ class DataAccessObject(ABC):
         pass
 
     @abstractmethod
-    def update_user(self, new_user: User):
+    def update_user(self, new_user: User, set_password=False):
         pass
 

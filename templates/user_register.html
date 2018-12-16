@@ -54,7 +54,7 @@
                     window.location.replace("{{ url_for("html_hello_world") }}");
                 }
                 else {
-                    alert("Bir hata oluştu");
+                    alert("Bir hata oluştu: " + response["error"]);
                 }
             }
         });

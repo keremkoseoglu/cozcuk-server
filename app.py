@@ -100,6 +100,16 @@ def html_admin():
     except Exception:
         return render_template("hacker.html")
 
+
+@app.route('/zzz', methods=['GET'])
+def html_zzz():
+    try:
+        dao, username = cozhttp.init_auth_post(app, request, session)
+        #dao.add_puzzle(Puzzle("test", "test", "test", False, username))
+        dao.disconnect()
+    except Exception:
+        return render_template("hacker.html")
+
 ############################################################
 # J S O N
 ############################################################
@@ -133,8 +143,9 @@ def json_check_answer():
 
         user_question = request.form.get("question")
         user_answer = request.form.get("answer").replace(" ", "").replace("i", "İ").upper()
+        correct_answer = dao.get_puzzle(user_question).answer
 
-        is_correct = dao.get_puzzle(user_question).answer == user_answer
+        is_correct = correct_answer == user_answer
         dao.disconnect()
         return cozhttp.get_success_as_json(str(is_correct))
     except Exception as error:
@@ -192,7 +203,7 @@ def json_add_user():
         dao.disconnect()
         return cozhttp.get_success_as_json("True")
     except Exception as error:
-        return cozhttp.get_error_as_json(error, dao)
+        return cozhttp.get_error_as_json(error)
 
 
 @app.route("/json/del_user", methods=['POST'])
@@ -203,7 +214,7 @@ def json_del_user():
         dao.disconnect()
         return cozhttp.get_success_as_json("True")
     except Exception as error:
-        return cozhttp.get_error_as_json(error, dao)
+        return cozhttp.get_error_as_json(error)
 
 
 @app.route("/json/get_user", methods=['POST'])
@@ -214,7 +225,7 @@ def json_get_user():
         dao.disconnect()
         return jsonify(user.get_dict())
     except Exception as error:
-        return cozhttp.get_error_as_json(error, dao)
+        return cozhttp.get_error_as_json(error)
 
 
 @app.route("/json/oauth", methods=['GET'])
@@ -226,7 +237,7 @@ def json_oauth():
         session["username"] = oauth_username
         return cozhttp.get_success_as_json("True")
     except Exception as error:
-        return cozhttp.get_error_as_json(error, None)
+        return cozhttp.get_error_as_json(error)
 
 
 @app.route("/json/update_user", methods=['POST'])
@@ -237,7 +248,7 @@ def json_update_user():
         dao.disconnect()
         return cozhttp.get_success_as_json("True")
     except Exception as error:
-        return cozhttp.get_error_as_json(error, dao)
+        return cozhttp.get_error_as_json(error)
 
 
 ############################################################

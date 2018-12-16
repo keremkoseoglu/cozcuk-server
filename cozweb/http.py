@@ -33,6 +33,7 @@ def init_auth_post(app, request, session) -> tuple:
         if "username" in session:
             username = session["username"]
             logged_in = username != ""
+            ldao.connect()
     else:
         password = request.form.get("password")
         ldao.connect()
@@ -79,6 +80,7 @@ def init_json_user_cud(app, request, session, check_auth=True) -> tuple:
         ldao.get_user(username).ensure_admin()
     else:
         ldao = dao_factory.get_dao(app.config["DATA_CLASS"])
+        ldao.connect()
     new_user = User(
         request.form.get("_username"),
         request.form.get("_password"),

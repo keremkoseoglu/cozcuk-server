@@ -3,6 +3,7 @@ from cozmodel.puzzle import Puzzle
 from cozmodel.user import User
 import random
 
+
 class HardCode(DataAccessObject):
 
     _EMAIL = "kerem@keremkoseoglu.com"
@@ -172,5 +173,5 @@ class HardCode(DataAccessObject):
         except:
             return False
 
-    def update_user(self, new_user: User):
+    def update_user(self, new_user: User, set_password=False):
         return
