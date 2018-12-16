@@ -4,22 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/.idea/workspace.xml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6815900-20a7-4e89-a87d-cab5b490d2fc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cozdata/postgre.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/spinner.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ec1cc17b-75dd-4a5f-884f-30fdb1b843f0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cozdata/dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/cozdata/dao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cozdata/hard_code.py" beforeDir="false" afterPath="$PROJECT_DIR$/cozdata/hard_code.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cozweb/http.py" beforeDir="false" afterPath="$PROJECT_DIR$/cozweb/http.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user_register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user_register.html" afterDir="false" />
-    </list>
+    <list default="true" id="a6815900-20a7-4e89-a87d-cab5b490d2fc" name="Default Changelist" comment="" />
     <ignored path="venv/" />
     <ignored path=".idea/" />
     <manually-removed-from-ignored>
@@ -116,8 +101,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/header.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="95" column="56" selection-start-line="95" selection-start-column="56" selection-end-line="95" selection-end-column="56" />
+            <state relative-caret-position="693">
+              <caret line="86" column="37" selection-start-line="86" selection-start-column="37" selection-end-line="86" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -297,7 +282,7 @@
       <workItem from="1544761853304" duration="21945000" />
       <workItem from="1544953579730" duration="1444000" />
       <workItem from="1544955137737" duration="5162000" />
-      <workItem from="1544981262466" duration="4642000" />
+      <workItem from="1544981262466" duration="4994000" />
     </task>
     <task id="LOCAL-00001" summary="Initial submission">
       <created>1544611967497</created>
@@ -425,11 +410,18 @@
       <option name="project" value="LOCAL" />
       <updated>1544794093393</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Regular update">
+      <created>1544986809851</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1544986809851</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55762000" />
+    <option name="totallyTimeSpent" value="56114000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -448,7 +440,7 @@
       <window_info id="Favorites" order="2" sideWeight="0.50058615" side_tool="true" weight="0.098490864" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3294025" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3294025" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3294025" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.22169812" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -457,7 +449,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3294025" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3294025" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3294025" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.3294025" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.2672956" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -824,8 +816,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/header.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="95" column="56" selection-start-line="95" selection-start-column="56" selection-end-line="95" selection-end-column="56" />
+        <state relative-caret-position="693">
+          <caret line="86" column="37" selection-start-line="86" selection-start-column="37" selection-end-line="86" selection-end-column="37" />
         </state>
       </provider>
     </entry>
