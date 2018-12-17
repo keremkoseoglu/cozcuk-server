@@ -188,6 +188,8 @@ class Postgre(DataAccessObject):
         return b == self._DB_TRUE
 
     def _encode(self, text: str) -> str:
+        if text is None or text == "":
+            return ""
         return hashlib.sha512(self._SALT.encode() + text.encode()).hexdigest()
 
     def _execute(self, command: str):
