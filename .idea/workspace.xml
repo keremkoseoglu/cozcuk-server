@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a6815900-20a7-4e89-a87d-cab5b490d2fc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cozweb/http.py" beforeDir="false" afterPath="$PROJECT_DIR$/cozweb/http.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
     <ignored path="venv/" />
     <ignored path=".idea/" />
@@ -110,11 +110,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="460">
-              <caret line="253" column="29" selection-start-line="253" selection-start-column="29" selection-end-line="253" selection-end-column="29" />
+              <caret line="253" column="95" selection-start-line="253" selection-start-column="95" selection-end-line="253" selection-end-column="95" />
               <folding>
                 <element signature="e#0#86#0" expanded="true" />
               </folding>
@@ -122,11 +122,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cozweb/http.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="361">
-              <caret line="93" column="59" lean-forward="true" selection-start-line="93" selection-start-column="59" selection-end-line="93" selection-end-column="62" />
+              <caret line="93" column="61" selection-start-line="93" selection-start-column="61" selection-end-line="93" selection-end-column="61" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -203,9 +203,9 @@
         <option value="$PROJECT_DIR$/cozweb/captcha.py" />
         <option value="$PROJECT_DIR$/templates/hello_captcha.html" />
         <option value="$PROJECT_DIR$/config.json" />
-        <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/templates/oauth.html" />
         <option value="$PROJECT_DIR$/cozweb/http.py" />
+        <option value="$PROJECT_DIR$/app.py" />
       </list>
     </option>
   </component>
@@ -331,7 +331,7 @@
       <workItem from="1544953579730" duration="1444000" />
       <workItem from="1544955137737" duration="5162000" />
       <workItem from="1544981262466" duration="4994000" />
-      <workItem from="1545020131135" duration="5253000" />
+      <workItem from="1545020131135" duration="5399000" />
     </task>
     <task id="LOCAL-00001" summary="Initial submission">
       <created>1544611967497</created>
@@ -515,11 +515,25 @@
       <option name="project" value="LOCAL" />
       <updated>1545041366327</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Regular update">
+      <created>1545041477437</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1545041477437</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Regular update">
+      <created>1545041523125</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1545041523125</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61367000" />
+    <option name="totallyTimeSpent" value="61513000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -801,22 +815,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
+    <entry file="file://$PROJECT_DIR$/cozweb/http.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="253" column="29" selection-start-line="253" selection-start-column="29" selection-end-line="253" selection-end-column="29" />
+        <state relative-caret-position="361">
+          <caret line="93" column="61" selection-start-line="93" selection-start-column="61" selection-end-line="93" selection-end-column="61" />
           <folding>
-            <element signature="e#0#86#0" expanded="true" />
+            <element signature="e#0#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cozweb/http.py">
+    <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="93" column="59" lean-forward="true" selection-start-line="93" selection-start-column="59" selection-end-line="93" selection-end-column="62" />
+        <state relative-caret-position="460">
+          <caret line="253" column="95" selection-start-line="253" selection-start-column="95" selection-end-line="253" selection-end-column="95" />
           <folding>
-            <element signature="e#0#42#0" expanded="true" />
+            <element signature="e#0#86#0" expanded="true" />
           </folding>
         </state>
       </provider>

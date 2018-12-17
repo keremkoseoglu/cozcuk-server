@@ -251,7 +251,7 @@ def json_oauth():
 def json_oauth_resp():
     oauth_username = request.args.get("oauth_username")
     oauth_token = request.args.get("oauth_token")
-    return cozhttp.get_oauth_response(oauth_token, app.config["OAUTH_TOKEN"])
+    return cozhttp.get_oauth_response(oauth_token, app.config["OAUTH_TOKEN"])["data"]["is_valid"]
 
 
 @app.route("/json/update_user", methods=['POST'])
