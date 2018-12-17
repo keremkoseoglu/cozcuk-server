@@ -7,7 +7,10 @@
     <list default="true" id="a6815900-20a7-4e89-a87d-cab5b490d2fc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cozdata/dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/cozdata/dao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cozdata/hard_code.py" beforeDir="false" afterPath="$PROJECT_DIR$/cozdata/hard_code.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cozdata/postgre.py" beforeDir="false" afterPath="$PROJECT_DIR$/cozdata/postgre.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cozmodel/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/cozmodel/user.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cozweb/http.py" beforeDir="false" afterPath="$PROJECT_DIR$/cozweb/http.py" afterDir="false" />
     </list>
     <ignored path="venv/" />
@@ -22,7 +25,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/cozcuk_server$cozcuk_server.coverage" NAME="cozcuk-server Coverage Results" MODIFIED="1545040029599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/cozcuk_server$cozcuk_server.coverage" NAME="cozcuk-server Coverage Results" MODIFIED="1545066271594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -102,12 +105,39 @@
     <favorites_list name="cozcuk-server" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/oauth.html">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="68" column="42" selection-start-line="68" selection-start-column="42" selection-end-line="68" selection-end-column="42" />
+            <state relative-caret-position="627">
+              <caret line="247" column="25" selection-start-line="247" selection-start-column="25" selection-end-line="247" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#86#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cozdata/dao.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="659">
+              <caret line="75" selection-start-line="75" selection-end-line="76" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cozdata/postgre.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="497">
+              <caret line="150" selection-start-line="150" selection-end-line="151" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -115,8 +145,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cozweb/http.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="99" column="14" selection-start-line="99" selection-start-column="14" selection-end-line="99" selection-end-column="14" />
+            <state relative-caret-position="1653">
+              <caret line="87" column="27" selection-start-line="87" selection-start-column="27" selection-end-line="87" selection-end-column="27" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -125,22 +155,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.py">
+        <entry file="file://$PROJECT_DIR$/cozmodel/user.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="241" column="65" selection-start-line="241" selection-start-column="65" selection-end-line="241" selection-end-column="65" />
-              <folding>
-                <element signature="e#0#86#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="95">
+              <caret line="5" column="13" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config.json">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cozdata/hard_code.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+            <state relative-caret-position="675">
+              <caret line="177" column="14" selection-start-line="177" selection-start-column="14" selection-end-line="177" selection-end-column="14" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -180,7 +210,6 @@
         <option value="$PROJECT_DIR$/cozdata/dao_json.py" />
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/cozmodel/http.py" />
-        <option value="$PROJECT_DIR$/cozmodel/user.py" />
         <option value="$PROJECT_DIR$/static/cozcuk.css" />
         <option value="$PROJECT_DIR$/templates/admin.html" />
         <option value="$PROJECT_DIR$/static/jquery.js" />
@@ -197,23 +226,24 @@
         <option value="$PROJECT_DIR$/templates/help.html" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/templates/user_register.html" />
-        <option value="$PROJECT_DIR$/cozdata/dao.py" />
-        <option value="$PROJECT_DIR$/cozdata/hard_code.py" />
-        <option value="$PROJECT_DIR$/cozdata/postgre.py" />
         <option value="$PROJECT_DIR$/templates/footer.html" />
         <option value="$PROJECT_DIR$/templates/header.html" />
         <option value="$PROJECT_DIR$/cozweb/captcha.py" />
         <option value="$PROJECT_DIR$/templates/hello_captcha.html" />
         <option value="$PROJECT_DIR$/templates/oauth.html" />
+        <option value="$PROJECT_DIR$/config.json" />
+        <option value="$PROJECT_DIR$/cozmodel/user.py" />
+        <option value="$PROJECT_DIR$/cozdata/dao.py" />
+        <option value="$PROJECT_DIR$/cozdata/hard_code.py" />
+        <option value="$PROJECT_DIR$/cozdata/postgre.py" />
         <option value="$PROJECT_DIR$/cozweb/http.py" />
         <option value="$PROJECT_DIR$/app.py" />
-        <option value="$PROJECT_DIR$/config.json" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="2560" />
+    <option name="width" value="1280" />
     <option name="height" value="1364" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -333,7 +363,8 @@
       <workItem from="1544953579730" duration="1444000" />
       <workItem from="1544955137737" duration="5162000" />
       <workItem from="1544981262466" duration="4994000" />
-      <workItem from="1545020131135" duration="6185000" />
+      <workItem from="1545020131135" duration="6346000" />
+      <workItem from="1545064446194" duration="890000" />
     </task>
     <task id="LOCAL-00001" summary="Initial submission">
       <created>1544611967497</created>
@@ -559,11 +590,25 @@
       <option name="project" value="LOCAL" />
       <updated>1545042118579</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Regular update">
+      <created>1545042429570</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1545042429570</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Regular update">
+      <created>1545042512153</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1545042512153</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62299000" />
+    <option name="totallyTimeSpent" value="63350000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -575,14 +620,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1124" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="1364" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4963925" visible="true" weight="0.10010649" />
-      <window_info id="Structure" order="1" sideWeight="0.5036075" side_tool="true" visible="true" weight="0.10010649" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49473685" visible="true" weight="0.20516963" />
+      <window_info id="Structure" order="1" sideWeight="0.50526315" side_tool="true" visible="true" weight="0.20516963" />
       <window_info id="Favorites" order="2" sideWeight="0.50058615" side_tool="true" weight="0.098490864" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32848838" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.3278302" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32848838" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.22093023" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -592,14 +637,14 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32848838" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32848838" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3278302" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.3294025" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.2672956" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.14962727" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.22455573" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -723,13 +768,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cozmodel/user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="6" selection-start-column="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/flask/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -738,40 +776,10 @@
       </provider>
     </entry>
     <entry file="das://71ec0e0d-e5cf-4553-9a50-7787fff9f321/database/ddi27dg30i27n9/schema/public/table/puzzle" />
-    <entry file="file://$PROJECT_DIR$/cozdata/postgre.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="49" column="20" lean-forward="true" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cozmodel/puzzle.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cozdata/hard_code.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="654">
-          <caret line="175" column="40" lean-forward="true" selection-start-line="175" selection-start-column="40" selection-end-line="175" selection-end-column="60" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cozdata/dao.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="635">
-          <caret line="75" column="60" selection-start-line="75" selection-start-column="60" selection-end-line="75" selection-end-column="60" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -838,30 +846,126 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://71ec0e0d-e5cf-4553-9a50-7787fff9f321/database/ddi27dg30i27n9/schema/public/table/user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://71ec0e0d-e5cf-4553-9a50-7787fff9f321/database/ddi27dg30i27n9/schema/public/table/user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://71ec0e0d-e5cf-4553-9a50-7787fff9f321/database/ddi27dg30i27n9/schema/public/table/user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://71ec0e0d-e5cf-4553-9a50-7787fff9f321/database/ddi27dg30i27n9/schema/public/table/user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://71ec0e0d-e5cf-4553-9a50-7787fff9f321/database/ddi27dg30i27n9/schema/public/table/user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://71ec0e0d-e5cf-4553-9a50-7787fff9f321/database/ddi27dg30i27n9/schema/public/table/user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://71ec0e0d-e5cf-4553-9a50-7787fff9f321/database/ddi27dg30i27n9/schema/public/table/user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://71ec0e0d-e5cf-4553-9a50-7787fff9f321/database/ddi27dg30i27n9/schema/public/table/user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cozdata/hard_code.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="177" column="14" selection-start-line="177" selection-start-column="14" selection-end-line="177" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cozmodel/user.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="13" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cozdata/postgre.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="150" selection-start-line="150" selection-end-line="151" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/cozweb/http.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="99" column="14" selection-start-line="99" selection-start-column="14" selection-end-line="99" selection-end-column="14" />
+        <state relative-caret-position="1653">
+          <caret line="87" column="27" selection-start-line="87" selection-start-column="27" selection-end-line="87" selection-end-column="27" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
+    <entry file="file://$PROJECT_DIR$/cozdata/dao.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="241" column="65" selection-start-line="241" selection-start-column="65" selection-end-line="241" selection-end-column="65" />
+        <state relative-caret-position="659">
+          <caret line="75" selection-start-line="75" selection-end-line="76" selection-end-column="12" />
           <folding>
-            <element signature="e#0#86#0" expanded="true" />
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.json">
+    <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+        <state relative-caret-position="627">
+          <caret line="247" column="25" selection-start-line="247" selection-start-column="25" selection-end-line="247" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#86#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,4 +1,5 @@
 from cozdata import factory as dao_factory
+from cozdata.dao import DataAccessObject
 from flask import jsonify
 from cozmodel.puzzle import Puzzle
 from cozmodel.user import User
@@ -8,6 +9,10 @@ import requests
 '''
 General
 '''
+
+
+def get_dao(app) -> DataAccessObject:
+    return dao_factory.get_dao(app.config["DATA_CLASS"])
 
 
 def get_error_as_text(error) -> str:
@@ -26,7 +31,7 @@ def get_success_as_json(success_text: str):
 def init_auth_post(app, request, session) -> tuple:
 
     logged_in = False
-    ldao = dao_factory.get_dao(app.config["DATA_CLASS"])
+    ldao = get_dao(app)
 
     username = request.form.get("username")
 
@@ -80,13 +85,14 @@ def init_json_user_cud(app, request, session, check_auth=True) -> tuple:
         ldao, username = init_auth_post(app, request, session)
         ldao.get_user(username).ensure_admin()
     else:
-        ldao = dao_factory.get_dao(app.config["DATA_CLASS"])
+        ldao = get_dao(app)
         ldao.connect()
     new_user = User(
         request.form.get("_username"),
         request.form.get("_password"),
         request.form.get("email"),
-        User.ROLE_CONSUMER
+        User.ROLE_CONSUMER,
+        False
     )
     return ldao, new_user
 

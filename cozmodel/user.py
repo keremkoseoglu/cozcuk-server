@@ -3,13 +3,14 @@ class User:
     ROLE_ADMIN = "A"
     ROLE_CONSUMER = "C"
 
-    def __init__(self, username: str, password: str, email: str, role: str):
+    def __init__(self, username: str, password: str, email: str, role: str, is_oauth: bool):
         self._validate_role(role)
 
         self.username = username
         self.password = password
         self.email = email
         self.role = role
+        self.is_oauth = is_oauth
 
     def ensure_admin(self):
         if not self.is_admin():
@@ -19,7 +20,8 @@ class User:
         return {
             "username": self.username,
             "email": self.email,
-            "role": self.role
+            "role": self.role,
+            "is_oauth": self.is_oauth
         }
 
     def is_admin(self) -> bool:

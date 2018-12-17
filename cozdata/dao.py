@@ -73,6 +73,10 @@ class DataAccessObject(ABC):
         pass
 
     @abstractmethod
+    def register_oauth_user(self, username: str):
+        pass
+
+    @abstractmethod
     def update_user(self, new_user: User, set_password=False):
         pass
 

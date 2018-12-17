@@ -116,11 +116,12 @@ class Postgre(DataAccessObject):
     def add_user(self, new_user: User):
         if self.get_user(new_user.username) is not None:
             raise Exception("Username taken")
-        command = "INSERT INTO public.user(username, password, email, role) VALUES ('{0}', '{1}', '{2}', '{3}')".format(
+        command = "INSERT INTO public.user(username, password, email, role, is_oauth) VALUES ('{0}', '{1}', '{2}', '{3}')".format(
             new_user.username,
             self._encode(new_user.password),
             new_user.email,
-            new_user.role
+            new_user.role,
+            self._bool_to_db(new_user.is_oauth)
         )
         self._execute(command)
 
@@ -133,17 +134,30 @@ class Postgre(DataAccessObject):
         itab = self._select(command)
         if itab is None or len(itab) == 0:
             return None
-        user, pwd, email, role = itab[0]
+        user, pwd, email, role, is_oauth = itab[0]
         return User(
             user,
             pwd,
             email,
-            role
+            role,
+            self._db_to_bool(is_oauth)
         )
 
     def login(self, username: str, password: str) -> bool:
         user = self.get_user(username)
-        return user.password == self._encode(password)
+        return (not user.is_oauth) and user.password == self._encode(password)
+
+    def register_oauth_user(self, username: str):
+        if not self.get_user(username) is None:
+            return
+        oauth_user = User(
+            username,
+            "",
+            "",
+            User.ROLE_CONSUMER,
+            True
+        )
+        self.add_user(oauth_user)
 
     def update_user(self, new_user: User, set_password=False):
         command = "UPDATE user SET email = '{0}', role = '{1}' WHERE username = '{2}'".format(

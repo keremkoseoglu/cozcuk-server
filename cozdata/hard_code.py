@@ -163,7 +163,8 @@ class HardCode(DataAccessObject):
                     user["username"],
                     self._PASSWORD,
                     self._EMAIL,
-                    user["role"]
+                    user["role"],
+                    False
                 )
         raise Exception("Unknown user: " + username)
 
@@ -172,6 +173,9 @@ class HardCode(DataAccessObject):
             return self.get_user(username).password == password
         except:
             return False
+
+    def register_oauth_user(self, username: str):
+        return
 
     def update_user(self, new_user: User, set_password=False):
         return

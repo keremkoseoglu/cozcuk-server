@@ -241,6 +241,12 @@ def json_oauth():
             raise Exception("Invalid username")
         if not cozhttp.is_oauth_valid(oauth_token, oauth_username):
             raise Exception("Invalid token")
+
+        ldao = cozhttp.get_dao(app)
+        ldao.connect()
+        ldao.register_oauth_user(oauth_username)
+        ldao.disconnect()
+
         session["username"] = oauth_username
         return cozhttp.get_success_as_json("True")
     except Exception as error:
