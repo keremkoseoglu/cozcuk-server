@@ -16,11 +16,13 @@ def get_dao(app) -> DataAccessObject:
 
 
 def get_error_as_text(error) -> str:
-    return str(error)
-
+    error_text = str(error)
+    print("Error: " + error_text)
+    return error_text
 
 def get_error_as_json(error):
     error_text = str(error)
+    print("Error: " + error_text)
     return jsonify({"error": error_text})
 
 
