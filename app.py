@@ -239,18 +239,12 @@ def json_oauth():
         oauth_token = request.args.get("oauth_token")
         if oauth_username is None or oauth_username == "":
             raise Exception("Invalid username")
-        if not cozhttp.is_oauth_valid(oauth_token, app.config["OAUTH_TOKEN"]):
+        if not cozhttp.is_oauth_valid(oauth_token, oauth_username):
             raise Exception("Invalid token")
         session["username"] = oauth_username
         return cozhttp.get_success_as_json("True")
     except Exception as error:
         return cozhttp.get_error_as_json(error)
-
-
-@app.route("/json/oauth_resp", methods=['GET'])
-def json_oauth_resp():
-    oauth_token = request.args.get("oauth_token")
-    return jsonify(cozhttp.get_oauth_response(oauth_token, app.config["OAUTH_TOKEN"]))
 
 
 @app.route("/json/update_user", methods=['POST'])

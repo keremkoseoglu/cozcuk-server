@@ -91,15 +91,15 @@ def init_json_user_cud(app, request, session, check_auth=True) -> tuple:
     return ldao, new_user
 
 
-def get_oauth_response(user_token: str, app_token: str) -> {}:
-    url = "https://graph.facebook.com/debug_token?input_token={0}&access_token={1}".format(user_token, app_token)
+def get_oauth_response(user_token: str) -> {}:
+    url = "https://graph.facebook.com/me?access_token={0}".format(user_token)
     resp = requests.get(url)
     return resp.json()
 
 
-def is_oauth_valid(user_token: str, app_token: str) -> bool:
-    oauth_resp = get_oauth_response(user_token, app_token)
-    if "data" in oauth_resp:
-        return str(oauth_resp["data"]["is_valid"]).lower() == "true"
+def is_oauth_valid(user_token: str, user_name: str) -> bool:
+    oauth_resp = get_oauth_response(user_token)
+    if "id" in oauth_resp and oauth_resp["id"] == user_name:
+        return True
     else:
         return False
