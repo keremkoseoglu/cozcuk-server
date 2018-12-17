@@ -116,7 +116,7 @@ class Postgre(DataAccessObject):
     def add_user(self, new_user: User):
         if self.get_user(new_user.username) is not None:
             raise Exception("Username taken")
-        command = "INSERT INTO public.user(username, password, email, role, is_oauth) VALUES ('{0}', '{1}', '{2}', '{3}')".format(
+        command = "INSERT INTO public.user(username, password, email, role, is_oauth) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}')".format(
             new_user.username,
             self._encode(new_user.password),
             new_user.email,
