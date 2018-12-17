@@ -92,7 +92,7 @@ def init_json_user_cud(app, request, session, check_auth=True) -> tuple:
 
 
 def get_oauth_response(user_token: str, app_token: str) -> {}:
-    url = "http://graph.facebook.com/debug_token?input_token={0}&access_token={1}".format(user_token, app_token)
+    url = "https://graph.facebook.com/debug_token?input_token={0}&access_token={1}".format(user_token, app_token)
     resp = requests.get(url)
     return resp.json()
 
