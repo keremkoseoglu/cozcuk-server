@@ -71,6 +71,10 @@ def html_login():
         session["username"] = username
         cozcaptcha.initialize_captcha(session)
         if dao.get_user(username).role == User.ROLE_ADMIN:
+            try:
+                cozcaptcha.delete_old_files(app.config["STATIC_FOLDER"])
+            except:
+                pass
             return redirect(url_for("html_admin"))
         else:
             return redirect(url_for("html_game"))
@@ -232,8 +236,11 @@ def json_get_user():
 def json_oauth():
     try:
         oauth_username = request.args.get("oauth_username")
+        oauth_token = request.args.get("oauth_token")
         if oauth_username is None or oauth_username == "":
             raise Exception("Invalid username")
+        if not cozhttp.is_oauth_valid(oauth_token, app.config["OAUTH_TOKEN"]):
+            raise Exception("Invalid token")
         session["username"] = oauth_username
         return cozhttp.get_success_as_json("True")
     except Exception as error:

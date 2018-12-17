@@ -1,5 +1,6 @@
 {
-  "DATA_CLASS": "Postgre",
+  "DATA_CLASS": "HardCode",
   "CACHE_TYPE": "null",
+  "OAUTH_TOKEN": "460553cb1129e70aed111f6afc7b5933",
   "SECRET_KEY": "SARI_KEDI_BEYAZ_KEDI"
 }

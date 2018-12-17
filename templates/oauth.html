@@ -69,7 +69,7 @@
 
         $.ajax({
             type: "GET",
-            url: "{{ url_for("json_oauth") }}?oauth_username=" + response.id,
+            url: "{{ url_for("json_oauth") }}?oauth_username=" + response.id + "&oauth_token=" + authResponse.accessToken,
             success: function (json_response) {
                 if (json_response["success"] == "True") {
                     window.location.replace("{{ url_for("html_game") }}");

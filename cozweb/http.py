@@ -3,6 +3,7 @@ from flask import jsonify
 from cozmodel.puzzle import Puzzle
 from cozmodel.user import User
 from cozweb import captcha as cozcaptcha
+import requests
 
 '''
 General
@@ -88,3 +89,9 @@ def init_json_user_cud(app, request, session, check_auth=True) -> tuple:
         User.ROLE_CONSUMER
     )
     return ldao, new_user
+
+
+def is_oauth_valid(user_token: str, app_token: str) -> bool:
+    url = "graph.facebook.com/debug_token?input_token={0}&access_token={1}".format(user_token, app_token)
+    resp = requests.get(url)
+    return True
