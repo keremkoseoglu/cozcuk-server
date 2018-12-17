@@ -4,7 +4,10 @@
     <bookmark url="file://$PROJECT_DIR$/.idea/workspace.xml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6815900-20a7-4e89-a87d-cab5b490d2fc" name="Default Changelist" comment="" />
+    <list default="true" id="a6815900-20a7-4e89-a87d-cab5b490d2fc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/oauth.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/oauth.html" afterDir="false" />
+    </list>
     <ignored path="venv/" />
     <ignored path=".idea/" />
     <manually-removed-from-ignored>
@@ -17,7 +20,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/cozcuk_server$cozcuk_server.coverage" NAME="cozcuk-server Coverage Results" MODIFIED="1544986757971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/cozcuk_server$cozcuk_server.coverage" NAME="cozcuk-server Coverage Results" MODIFIED="1545039694720" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -99,10 +102,43 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/header.html">
+        <entry file="file://$PROJECT_DIR$/templates/oauth.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="693">
-              <caret line="86" column="37" selection-start-line="86" selection-start-column="37" selection-end-line="86" selection-end-column="37" />
+            <state relative-caret-position="341">
+              <caret line="68" column="41" selection-start-line="68" selection-start-column="41" selection-end-line="68" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="242" column="42" selection-start-line="242" selection-start-column="42" selection-end-line="242" selection-end-column="42" />
+              <folding>
+                <element signature="e#0#86#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cozweb/http.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="96" column="15" selection-start-line="96" selection-start-column="15" selection-end-line="96" selection-end-column="15" />
+              <folding>
+                <element signature="e#0#42#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="3" column="51" selection-start-line="3" selection-start-column="51" selection-end-line="3" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -130,6 +166,7 @@
       <find>(app</find>
       <find>close</find>
       <find>&quot;X</find>
+      <find>_get_png_file_path</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -149,30 +186,30 @@
         <option value="$PROJECT_DIR$/cozmodel/puzzle.py" />
         <option value="$PROJECT_DIR$/templates/admin_menu.html" />
         <option value="$PROJECT_DIR$/static/privacy.html" />
-        <option value="$PROJECT_DIR$/templates/oauth.html" />
-        <option value="$PROJECT_DIR$/cozweb/captcha.py" />
         <option value="$PROJECT_DIR$/templates/user_menu.html" />
         <option value="$PROJECT_DIR$/templates/hello.html" />
-        <option value="$PROJECT_DIR$/templates/hello_captcha.html" />
         <option value="$PROJECT_DIR$/templates/user_game.html" />
         <option value="$PROJECT_DIR$/templates/add_puzzle.html" />
         <option value="$PROJECT_DIR$/settings.cfg" />
         <option value="$PROJECT_DIR$/cozdata/factory.py" />
         <option value="$PROJECT_DIR$/templates/help.html" />
-        <option value="$PROJECT_DIR$/config.json" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
-        <option value="$PROJECT_DIR$/cozweb/http.py" />
-        <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/templates/user_register.html" />
         <option value="$PROJECT_DIR$/cozdata/dao.py" />
         <option value="$PROJECT_DIR$/cozdata/hard_code.py" />
         <option value="$PROJECT_DIR$/cozdata/postgre.py" />
         <option value="$PROJECT_DIR$/templates/footer.html" />
         <option value="$PROJECT_DIR$/templates/header.html" />
+        <option value="$PROJECT_DIR$/cozweb/captcha.py" />
+        <option value="$PROJECT_DIR$/templates/hello_captcha.html" />
+        <option value="$PROJECT_DIR$/config.json" />
+        <option value="$PROJECT_DIR$/cozweb/http.py" />
+        <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/templates/oauth.html" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="2560" />
     <option name="height" value="1364" />
@@ -203,7 +240,18 @@
             <path>
               <item name="cozcuk-server" type="b2602c69:ProjectViewProjectNode" />
               <item name="cozcuk-server" type="462c0819:PsiDirectoryNode" />
+              <item name="cozweb" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cozcuk-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cozcuk-server" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cozcuk-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cozcuk-server" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="captcha" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cozcuk-server" type="b2602c69:ProjectViewProjectNode" />
@@ -283,6 +331,7 @@
       <workItem from="1544953579730" duration="1444000" />
       <workItem from="1544955137737" duration="5162000" />
       <workItem from="1544981262466" duration="4994000" />
+      <workItem from="1545020131135" duration="3758000" />
     </task>
     <task id="LOCAL-00001" summary="Initial submission">
       <created>1544611967497</created>
@@ -417,11 +466,18 @@
       <option name="project" value="LOCAL" />
       <updated>1544986809851</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Regular update">
+      <created>1545039731277</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1545039731277</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56114000" />
+    <option name="totallyTimeSpent" value="59872000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -433,15 +489,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="2560" height="1364" extended-state="6" />
+    <frame x="0" y="23" width="1920" height="1124" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4982415" visible="true" weight="0.09928515" />
-      <window_info id="Structure" order="1" sideWeight="0.5017585" side_tool="true" visible="true" weight="0.09928515" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4963925" visible="true" weight="0.10010649" />
+      <window_info id="Structure" order="1" sideWeight="0.5036075" side_tool="true" visible="true" weight="0.10010649" />
       <window_info id="Favorites" order="2" sideWeight="0.50058615" side_tool="true" weight="0.098490864" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3294025" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3294025" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.22169812" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32848838" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32848838" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.22093023" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3294025" />
@@ -449,14 +506,14 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3294025" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3294025" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32848838" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.3294025" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.2672956" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.15011914" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.14962727" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,9 +538,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app.py</url>
-          <line>147</line>
-          <option name="timeStamp" value="14" />
+          <url>file://$PROJECT_DIR$/cozweb/http.py</url>
+          <line>96</line>
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -549,20 +606,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/hello_captcha.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/oauth.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="74" column="20" selection-start-line="74" selection-start-column="20" selection-end-line="74" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/add_puzzle.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -578,23 +621,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/settings.cfg" />
-    <entry file="file://$PROJECT_DIR$/cozweb/captcha.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/hello.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="24" lean-forward="true" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/help.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -636,85 +662,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://71ec0e0d-e5cf-4553-9a50-7787fff9f321/database/ddi27dg30i27n9/schema/public/table/user" />
     <entry file="das://71ec0e0d-e5cf-4553-9a50-7787fff9f321/database/ddi27dg30i27n9/schema/public/table/puzzle" />
-    <entry file="das://71ec0e0d-e5cf-4553-9a50-7787fff9f321/database/ddi27dg30i27n9/schema/public/table/puzzle">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://71ec0e0d-e5cf-4553-9a50-7787fff9f321/database/ddi27dg30i27n9/schema/public/table/puzzle">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://71ec0e0d-e5cf-4553-9a50-7787fff9f321/database/ddi27dg30i27n9/schema/public/table/puzzle">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://71ec0e0d-e5cf-4553-9a50-7787fff9f321/database/ddi27dg30i27n9/schema/public/table/puzzle">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://71ec0e0d-e5cf-4553-9a50-7787fff9f321/database/ddi27dg30i27n9/schema/public/table/puzzle">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://71ec0e0d-e5cf-4553-9a50-7787fff9f321/database/ddi27dg30i27n9/schema/public/table/puzzle">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://71ec0e0d-e5cf-4553-9a50-7787fff9f321/database/ddi27dg30i27n9/schema/public/table/puzzle">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://71ec0e0d-e5cf-4553-9a50-7787fff9f321/database/ddi27dg30i27n9/schema/public/table/puzzle">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://71ec0e0d-e5cf-4553-9a50-7787fff9f321/database/ddi27dg30i27n9/schema/public/table/user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://71ec0e0d-e5cf-4553-9a50-7787fff9f321/database/ddi27dg30i27n9/schema/public/table/user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://71ec0e0d-e5cf-4553-9a50-7787fff9f321/database/ddi27dg30i27n9/schema/public/table/user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cozdata/postgre.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="341">
@@ -752,58 +700,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://71ec0e0d-e5cf-4553-9a50-7787fff9f321/database/ddi27dg30i27n9/schema/public/table/user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://71ec0e0d-e5cf-4553-9a50-7787fff9f321/database/ddi27dg30i27n9/schema/public/table/user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://71ec0e0d-e5cf-4553-9a50-7787fff9f321/database/ddi27dg30i27n9/schema/public/table/user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="245" column="42" selection-start-line="245" selection-start-column="42" selection-end-line="245" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#86#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://71ec0e0d-e5cf-4553-9a50-7787fff9f321/database/ddi27dg30i27n9/schema/public/table/user" />
     <entry file="file://$PROJECT_DIR$/templates/user_register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1007">
           <caret line="53" column="81" selection-start-line="53" selection-start-column="81" selection-end-line="53" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cozweb/http.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="76" column="4" selection-start-line="76" selection-start-column="4" selection-end-line="76" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -816,8 +717,76 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/header.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="86" column="37" selection-start-line="86" selection-start-column="37" selection-end-line="86" selection-end-column="37" />
+        <state relative-caret-position="208">
+          <caret line="65" column="23" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.3/python_stubs/-623358177/time.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="143" column="4" selection-start-line="143" selection-start-column="4" selection-end-line="143" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/captcha/894bbf78-77a7-4709-a9db-62e46212ede7.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/hello_captcha.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cozweb/captcha.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="43" column="39" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/hello.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cozweb/http.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="96" column="15" selection-start-line="96" selection-start-column="15" selection-end-line="96" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="51" selection-start-line="3" selection-start-column="51" selection-end-line="3" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="242" column="42" selection-start-line="242" selection-start-column="42" selection-end-line="242" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#86#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/oauth.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="68" column="41" selection-start-line="68" selection-start-column="41" selection-end-line="68" selection-end-column="41" />
         </state>
       </provider>
     </entry>
