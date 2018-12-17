@@ -99,4 +99,7 @@ def get_oauth_response(user_token: str, app_token: str) -> {}:
 
 def is_oauth_valid(user_token: str, app_token: str) -> bool:
     oauth_resp = get_oauth_response(user_token, app_token)
-    return str(oauth_resp["data"]["is_valid"]).lower() == "true"
+    if "data" in oauth_resp:
+        return str(oauth_resp["data"]["is_valid"]).lower() == "true"
+    else:
+        return False

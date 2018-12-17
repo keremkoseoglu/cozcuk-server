@@ -249,7 +249,6 @@ def json_oauth():
 
 @app.route("/json/oauth_resp", methods=['GET'])
 def json_oauth_resp():
-    oauth_username = request.args.get("oauth_username")
     oauth_token = request.args.get("oauth_token")
     return jsonify(cozhttp.get_oauth_response(oauth_token, app.config["OAUTH_TOKEN"]))
 
