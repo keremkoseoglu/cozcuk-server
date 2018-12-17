@@ -68,6 +68,16 @@
       console.log('Successful login for: ' + response.name);
       authResponse = FB.getAuthResponse();
 
+       $.ajax({
+            type: "GET",
+            url: "{{ url_for("json_oauth_resp") }}?oauth_username=" + response.id + "&oauth_token=" + authResponse.accessToken,
+            success: function (json_response) {
+                console.log(json_response)
+            }
+        });
+
+       return;
+
         $.ajax({
             type: "GET",
             url: "{{ url_for("json_oauth") }}?oauth_username=" + response.id + "&oauth_token=" + authResponse.accessToken,
