@@ -6,14 +6,17 @@
     <tr>
         <td>Kullanıcı: </td>
         <td><input type="text" name="username"></td>
+        <td></td>
     </tr>
     <tr>
         <td>Şifre: </td>
         <td><input type="password" name="password"></td>
+        <td><a class="info" href="{{ url_for("html_forgot_pwd") }}">Unuttum</a></td>
     </tr>
     <tr>
         <td><img src="static/captcha/{{ session["captcha_file"] }}"></td>
         <td><input type="text" name="captcha"></td>
+        <td></td>
     </tr>
 </table>
 

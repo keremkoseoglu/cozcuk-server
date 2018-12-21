@@ -1,0 +1,38 @@
+{% include "header.html" %}
+
+<table>
+    <tr>
+        <td>Kullanıcı adı:</td>
+        <td><input type="text" id="username" value="{{ uname }}"><span id="user_error"></span></td>
+    </tr>
+</table>
+
+<a href="#" onclick="forgot_pwd()">Gönder</a> <span id="result"></span>
+
+<script>
+    function forgot_pwd() {
+        var username = $("#username").val();
+
+        if (username == "") {
+            $("#user_error").text("🔴");
+            return;
+        }
+
+        $.ajax({
+            type: "GET",
+            contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+            url: "{{ url_for("json_forgot_pwd") }}?uname=" + username,
+            success: function (response) {
+                if (response["success"] == "True") {
+                    alert("Şifreniz, (varsa) kayıtlı E-Posta adresine gönderilecektir");
+                    window.location.replace("{{ url_for("html_hello_world") }}");
+                }
+                else {
+                    alert("Bir hata oluştu: " + response["error"]);
+                }
+            }
+        });
+    }
+</script>
+
+{% include "footer.html" %}

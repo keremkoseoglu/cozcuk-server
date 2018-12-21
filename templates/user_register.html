@@ -3,7 +3,7 @@
 <table>
     <tr>
         <td>Kullanıcı adı:</td>
-        <td><input type="text" id="username"><span id="user_error"></span></td>
+        <td><input type="text" id="username" value="{{ uname }}"><span id="user_error"></span></td>
     </tr>
     <tr>
         <td>Şifre</td>
@@ -42,7 +42,7 @@
         $.ajax({
             type: "POST",
             contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-            url: "{{ url_for("json_add_user") }}",
+            url: "{{ post_url }}",
             data: {
                 "_username": username,
                 "_password": password1,

@@ -143,6 +143,14 @@ class Postgre(DataAccessObject):
             self._db_to_bool(is_oauth)
         )
 
+    def get_user_by_reset_token(self, reset_token: str) -> User:
+        # todo 470
+        # DB üzerinde sütun aç: şifre sıfırlama token'ı (user tablosu)
+        # bu token index'lenmiş olsun
+        # user, token bazında dönsün
+        # aşağıdaki pass'ı sil
+        pass
+
     def login(self, username: str, password: str) -> bool:
         user = self.get_user(username)
         return (not user.is_oauth) and user.password == self._encode(password)
@@ -159,7 +167,17 @@ class Postgre(DataAccessObject):
         )
         self.add_user(oauth_user)
 
+    def set_user_reset_token(self, username: str, reset_token: str):
+        # todo 475
+        # user bazında token set et
+        # aşağıdaki pass'ı sil
+        pass
+
     def update_user(self, new_user: User, set_password=False):
+
+        # todo 510
+        # aşağıda pwd reset token'i silmiş ol
+
         command = "UPDATE user SET email = '{0}', role = '{1}' WHERE username = '{2}'".format(
             new_user.email,
             new_user.role,

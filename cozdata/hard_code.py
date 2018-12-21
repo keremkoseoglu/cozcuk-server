@@ -168,6 +168,9 @@ class HardCode(DataAccessObject):
                 )
         raise Exception("Unknown user: " + username)
 
+    def get_user_by_reset_token(self, reset_token: str) -> User:
+        raise Exception("Hard code doesn't support reset tokens")
+
     def login(self, username: str, password: str) -> bool:
         try:
             return self.get_user(username).password == password
@@ -175,6 +178,9 @@ class HardCode(DataAccessObject):
             return False
 
     def register_oauth_user(self, username: str):
+        return
+
+    def set_user_reset_token(self, username: str, reset_token: str):
         return
 
     def update_user(self, new_user: User, set_password=False):

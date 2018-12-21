@@ -69,6 +69,10 @@ class DataAccessObject(ABC):
         pass
 
     @abstractmethod
+    def get_user_by_reset_token(self, reset_token: str) -> User:
+        pass
+
+    @abstractmethod
     def login(self, user: str, password: str) -> bool:
         pass
 
@@ -78,5 +82,9 @@ class DataAccessObject(ABC):
 
     @abstractmethod
     def update_user(self, new_user: User, set_password=False):
+        pass
+
+    @abstractmethod
+    def set_user_reset_token(self, username: str, reset_token: str):
         pass
 

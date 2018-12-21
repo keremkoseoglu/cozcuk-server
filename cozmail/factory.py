@@ -1,15 +1,15 @@
-from cozdata import dao, hard_code
+from cozmail import mao
 import inspect, sys
 import os
 
-_DATA_PATH = "cozdata"
+_DATA_PATH = "cozmail"
 _MODULE_EXTENSIONS = ('.py', '.pyc', '.pyo')
 
 
-def get_dao() -> dao.DataAccessObject:
-    active_data_class = os.environ["DATA_CLASS"]
-    all_daos = _get_all_daos()
-    return all_daos[active_data_class]() # Örnek değer: HardCode
+def get_mao() -> mao.Mailer:
+    active_mail_class = os.environ["MAIL_CLASS"]
+    all_maos = _get_all_maos()
+    return all_maos[active_mail_class]() # Örnek değer: HardCode
 
 
 def _get_all_modules():
@@ -17,13 +17,13 @@ def _get_all_modules():
     path = os.path.join(os.getcwd(), _DATA_PATH)
     files = [f for f in os.listdir(path)]
     for f in files:
-        if f[:2] != "__" and f[:3] != "dao" and f[:7] != "factory":
+        if f[:2] != "__" and f[:3] != "mao" and f[:7] != "factory":
             fname = os.path.splitext(f)[0]
             output.append(fname)
     return output
 
 
-def _get_all_daos() -> {}:
+def _get_all_maos() -> {}:
     output = {}
 
     modules = _get_all_modules()
@@ -34,7 +34,7 @@ def _get_all_daos() -> {}:
 
         for name, obj in inspect.getmembers(module, inspect.isclass):
             if _DATA_PATH in str(obj) and \
-                    name != "DataAccessObject" and \
+                    name != "Mailer" and \
                     name != "factory":
                 output[name] = obj
 

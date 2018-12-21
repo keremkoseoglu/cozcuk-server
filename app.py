@@ -1,10 +1,12 @@
 from flask import Flask, jsonify, redirect, render_template, request, session, url_for
+from cozdata import factory as cozdata_factory
 from cozweb import http as cozhttp, captcha as cozcaptcha
 from cozmodel.user import User
 import os
 
 app = Flask(__name__)
-app.config.from_json("config.json")
+app.config["CACHE_TYPE"] = "null"
+app.config["SECRET_KEY"] = "SARI_KEDI_BEYAZ_KEDI"
 app.config["APP_ROOT"] = os.path.dirname(os.path.abspath(__file__))
 app.config["STATIC_FOLDER"] = os.path.join(app.config["APP_ROOT"], 'static')
 
@@ -44,14 +46,51 @@ def html_add_puzzle():
 @app.route('/add_user', methods=['GET'])
 def html_add_user():
     try:
-        return render_template("user_register.html")
+        return render_template(
+            "user_register.html",
+            uname="",
+            email="",
+            post_url=url_for("json_add_user")
+        )
     except Exception:
         return render_template("hacker.html")
 
 
-@app.route('/help', methods=['GET'])
-def html_help():
-    return render_template("help.html")
+@app.route('/edit_user', methods=['GET'])
+def html_edit_user():
+
+    # todo 460 sayfanın postgre'de çalıştığından emin ol (reset değil, ona sonra bakacaksın, sadece edit)
+
+    try:
+        reset_token = request.args.get("reset_token")
+        if reset_token is not None and reset_token != "":
+            dao = cozdata_factory.get_dao()
+            dao.connect()
+            user = dao.get_user_by_reset_token(reset_token)
+        else:
+            dao, username = cozhttp.init_auth_post(app, request, session)
+            user = dao.get_user(username)
+        dao.disconnect()
+
+        if user is None:
+            raise Exception("Can't determine user")
+
+        return render_template(
+            "user_register.html",
+            uname=user.username,
+            email=user.email,
+            post_url=url_for("json_update_user")
+        )
+    except Exception:
+        return render_template("hacker.html")
+
+
+@app.route('/forgot_pwd', methods=['GET'])
+def html_forgot_pwd():
+    try:
+        return render_template("forgot_pwd.html")
+    except Exception:
+        return render_template("hacker.html")
 
 
 @app.route('/game', methods=['GET'])
@@ -62,6 +101,11 @@ def html_game():
         return render_template("user_game.html")
     except Exception:
         return render_template("hacker.html")
+
+
+@app.route('/help', methods=['GET'])
+def html_help():
+    return render_template("help.html")
 
 
 @app.route('/login', methods=['POST'])
@@ -104,15 +148,6 @@ def html_admin():
     except Exception:
         return render_template("hacker.html")
 
-
-@app.route('/zzz', methods=['GET'])
-def html_zzz():
-    try:
-        dao, username = cozhttp.init_auth_post(app, request, session)
-        #dao.add_puzzle(Puzzle("test", "test", "test", False, username))
-        dao.disconnect()
-    except Exception:
-        return render_template("hacker.html")
 
 ############################################################
 # J S O N
@@ -162,6 +197,16 @@ def json_del_puzzle():
         dao, cud_puzzle = cozhttp.init_json_puzzle_cud(app, request, session)
         dao.del_puzzle(cud_puzzle.question)
         dao.disconnect()
+        return cozhttp.get_success_as_json("True")
+    except Exception as error:
+        return cozhttp.get_error_as_json(error)
+
+
+@app.route("/json/forgot_pwd", methods=['GET'])
+def json_forgot_pwd():
+    try:
+        posted_username = request.args.get("uname")
+        cozhttp.send_forgot_password_email(posted_username, url_for("html_edit_user"))
         return cozhttp.get_success_as_json("True")
     except Exception as error:
         return cozhttp.get_error_as_json(error)
@@ -242,7 +287,7 @@ def json_oauth():
         if not cozhttp.is_oauth_valid(oauth_token, oauth_username):
             raise Exception("Invalid token")
 
-        ldao = cozhttp.get_dao(app)
+        ldao = cozdata_factory.get_dao()
         ldao.connect()
         ldao.register_oauth_user(oauth_username)
         ldao.disconnect()
@@ -257,7 +302,10 @@ def json_oauth():
 def json_update_user():
     try:
         dao, cud_user = cozhttp.init_json_user_cud(app, request, session)
-        dao.update_user(cud_user)
+        dao.update_user(
+            cud_user,
+            set_password=(cud_user.password != "")
+        )
         dao.disconnect()
         return cozhttp.get_success_as_json("True")
     except Exception as error:
