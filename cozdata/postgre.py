@@ -100,7 +100,7 @@ class Postgre(DataAccessObject):
         self.del_puzzle(question)
 
     def update_puzzle(self, new_puzzle: Puzzle):
-        command = "UPDATE puzzle SET answer = '{0}', hint = '{1}', approved = '{2}', author = '{3}' WHERE question = '{4}'".format(
+        command = "UPDATE public.puzzle SET answer = '{0}', hint = '{1}', approved = '{2}', author = '{3}' WHERE question = '{4}'".format(
             new_puzzle.answer,
             new_puzzle.hint,
             self._bool_to_db(new_puzzle.approved),
@@ -130,7 +130,7 @@ class Postgre(DataAccessObject):
         self._execute(command)
 
     def get_user(self, username: str) -> User:
-        command = "SELECT * FROM public.user WHERE username = '{0}'".format(username)
+        command = "SELECT username, password, email, role, is_oauth FROM public.user WHERE username = '{0}'".format(username)
         itab = self._select(command)
         if itab is None or len(itab) == 0:
             return None
@@ -144,12 +144,15 @@ class Postgre(DataAccessObject):
         )
 
     def get_user_by_reset_token(self, reset_token: str) -> User:
-        # todo 470
-        # DB üzerinde sütun aç: şifre sıfırlama token'ı (user tablosu)
-        # bu token index'lenmiş olsun
-        # user, token bazında dönsün
-        # aşağıdaki pass'ı sil
-        pass
+        if reset_token is None or reset_token == "":
+            return None
+
+        command = "SELECT username FROM public.user WHERE pwd_token = '{0}'".format(reset_token)
+        itab = self._select(command)
+        if itab is None or len(itab) == 0:
+            return None
+        username = itab[0][0]
+        return self.get_user(username)
 
     def login(self, username: str, password: str) -> bool:
         user = self.get_user(username)
@@ -168,17 +171,14 @@ class Postgre(DataAccessObject):
         self.add_user(oauth_user)
 
     def set_user_reset_token(self, username: str, reset_token: str):
-        # todo 475
-        # user bazında token set et
-        # aşağıdaki pass'ı sil
-        pass
+        command = "UPDATE public.user SET pwd_token = '{0}' where username = '{1}'".format(
+            reset_token,
+            username
+        )
+        self._execute(command)
 
     def update_user(self, new_user: User, set_password=False):
-
-        # todo 510
-        # aşağıda pwd reset token'i silmiş ol
-
-        command = "UPDATE user SET email = '{0}', role = '{1}' WHERE username = '{2}'".format(
+        command = "UPDATE public.user SET email = '{0}', role = '{1}' WHERE username = '{2}'".format(
             new_user.email,
             new_user.role,
             new_user.username
@@ -186,7 +186,7 @@ class Postgre(DataAccessObject):
         self._execute(command)
 
         if set_password:
-            command = "UPDATE user SET password = '{0}' WHERE username = '{1}'".format(
+            command = "UPDATE public.user SET password = '{0}', pwd_token = '' WHERE username = '{1}'".format(
                 self._encode(new_user.password),
                 new_user.username
             )

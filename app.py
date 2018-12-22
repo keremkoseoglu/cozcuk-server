@@ -59,8 +59,6 @@ def html_add_user():
 @app.route('/edit_user', methods=['GET'])
 def html_edit_user():
 
-    # todo 460 sayfanın postgre'de çalıştığından emin ol (reset değil, ona sonra bakacaksın, sadece edit)
-
     try:
         reset_token = request.args.get("reset_token")
         if reset_token is not None and reset_token != "":
