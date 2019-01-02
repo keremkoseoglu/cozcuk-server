@@ -76,3 +76,7 @@ Flask'in öngördüğü sabit içerik klasörüdür.
 ### /templates
 
 Flask'in öngördüğü şablon içerik klasörüdür.
+
+## Yardımcı Projeler
+
+Eş anlamlı kelimelerden otomatik bilmece üreten [Çözcük Generator](https://github.com/keremkoseoglu/cozcuk-generator) programı geliştirilmiştir.
