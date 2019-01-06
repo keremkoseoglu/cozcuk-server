@@ -179,7 +179,7 @@ def json_check_answer():
         dao, username = cozhttp.init_auth_post(app, request, session)
 
         user_question = request.form.get("question")
-        user_answer = request.form.get("answer").replace(" ", "").replace("i", "İ").upper()
+        user_answer = request.form.get("answer").replace(" ", "")
         correct_answer = dao.get_puzzle(user_question).answer
 
         is_correct = correct_answer == user_answer
