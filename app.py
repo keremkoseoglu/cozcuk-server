@@ -121,7 +121,7 @@ def html_login():
         else:
             return redirect(url_for("html_game"))
     except Exception:
-        if request.form.get("username") is not None or request.form.get("username") != "":
+        if cozhttp.get_form_value(request, "username") is not None or cozhttp.get_form_value(request, "username") != "":
             cozcaptcha.generate_captcha(session, app.config["STATIC_FOLDER"])
         return redirect(url_for("html_hello_world"))
 
@@ -178,8 +178,8 @@ def json_check_answer():
     try:
         dao, username = cozhttp.init_auth_post(app, request, session)
 
-        user_question = request.form.get("question")
-        user_answer = request.form.get("answer").replace(" ", "")
+        user_question = cozhttp.get_form_value(request, "question")
+        user_answer = cozhttp.get_form_value(request, "answer").replace(" ", "")
         correct_answer = dao.get_puzzle(user_question).answer
 
         is_correct = correct_answer == user_answer

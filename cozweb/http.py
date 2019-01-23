@@ -7,6 +7,7 @@ from flask import jsonify
 import os
 import requests
 import uuid
+import json
 
 '''
 General
@@ -25,6 +26,21 @@ def get_error_as_json(error):
     return jsonify({"error": error_text})
 
 
+def get_form_value(request, key) -> str:
+    output = ""
+
+    output = request.form.get(key)
+
+    if output is None or output == "":
+        try:
+            json_data = json.loads(request.data)
+            output = json_data[key]
+        except:
+            pass
+
+    return output
+
+
 def get_success_as_json(success_text: str):
     return jsonify({"success": success_text})
 
@@ -34,7 +50,7 @@ def init_auth_post(app, request, session) -> tuple:
     logged_in = False
     ldao = cozdata_factory.get_dao()
 
-    username = request.form.get("username")
+    username = get_form_value(request, "username")
 
     if username is None or username == "":
         if "username" in session:
@@ -42,13 +58,17 @@ def init_auth_post(app, request, session) -> tuple:
             logged_in = username != ""
             ldao.connect()
     else:
-        password = request.form.get("password")
+        password = get_form_value(request, "password")
         ldao.connect()
         logged_in = ldao.login(username, password)
 
         if logged_in and cozcaptcha.is_captcha_needed(session):
             expected_captcha = session["captcha_answer"]
-            logged_in = expected_captcha == request.form.get("captcha")
+            logged_in = expected_captcha == get_form_value(request, "captcha")
+
+    if not logged_in and ( not ( username is None or username == "" ) ):
+        if is_oauth_valid(password, username):
+            logged_in = True
 
     if not logged_in:
         ldao.disconnect()
@@ -67,9 +87,9 @@ def init_json_puzzle_cud(app, request, session, must_be_admin: True) -> tuple:
         ldao.get_user(username).ensure_admin()
 
     new_puzzle = Puzzle(
-        request.form.get("question"),
-        request.form.get("hint"),
-        request.form.get("answer"),
+        get_form_value(request, "question"),
+        get_form_value(request, "hint"),
+        get_form_value(request, "answer"),
         False,
         username
     )
@@ -89,7 +109,7 @@ def get_oauth_response(user_token: str) -> {}:
 
 def init_json_user_cud(app, request, session, check_auth=True) -> tuple:
 
-    posted_username = request.form.get("_username")
+    posted_username = get_form_value(request, "_username")
 
     if check_auth:
         ldao, username = init_auth_post(app, request, session)
@@ -100,8 +120,8 @@ def init_json_user_cud(app, request, session, check_auth=True) -> tuple:
         ldao.connect()
     new_user = User(
         posted_username,
-        request.form.get("_password"),
-        request.form.get("email"),
+        get_form_value(request, "_password"),
+        get_form_value(request, "email"),
         User.ROLE_CONSUMER,
         False
     )
