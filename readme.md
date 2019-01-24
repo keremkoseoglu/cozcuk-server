@@ -80,3 +80,5 @@ Flask'in öngördüğü şablon içerik klasörüdür.
 ## Yardımcı Projeler
 
 Eş anlamlı kelimelerden otomatik bilmece üreten [Çözcük Generator](https://github.com/keremkoseoglu/cozcuk-generator) programı geliştirilmiştir.
+
+Farklı cihazlardan oyuna erişmek için gerekli geliştirmeler, [Çözcük GUI](https://github.com/keremkoseoglu/cozcuk-gui) altında bulunabilir.
